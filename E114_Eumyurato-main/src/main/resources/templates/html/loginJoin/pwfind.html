@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--begin::Head-->
+
+<head>
+    <title>Eumyurato</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/E114_logo.png}"/>
+    <meta charset="utf-8"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/loginJoin/loginJoin2.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/loginJoin/loginJoin1.css}" rel="stylesheet" type="text/css"/>
+    <!--end::Global Stylesheets Bundle-->
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body" class="bg-white">
+<!--begin::Main-->
+<div class="d-flex flex-column flex-root">
+    <!--begin::Login-->
+    <div class="d-flex flex-column flex-lg-row flex-column-fluid" id="kt_login">
+        <div class="d-flex flex-column flex-lg-row-auto bg-primary pt-15 pt-lg-0 center" id="leftArea">
+            <!--begin::Aside Top-->
+            <div class="d-flex flex-row-fluid flex-center flex-column-auto flex-column text-center mb-5 align-items-center">
+                <!--begin::Aside Logo-->
+                <a th:href="@{/home}" class="mb-6">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                        <img alt="로고" th:src="@{/img/E114_logo.png}" class="h-450px h-lg-450px"/>
+                    </div>
+                </a>
+                <!--end::Aside Logo-->
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-lg-row-auto bg-primary pt-15 pt-lg-0 d-none d-lg-flex" id="leftArea2">
+            <div class="d-flex flex-row-fluid flex-center flex-column-auto flex-column text-center mb-5 align-items-center">
+                <!--begin::Aside Logo-->
+                <div class="d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                    <img alt="로고" th:src="@{/img/E114_logo.png}" class="h-450px h-lg-450px"/>
+                </div>
+                <!--end::Aside Logo-->
+            </div>
+        </div>
+
+
+        <!--사이드-->
+        <!--begin::Aside-->
+        <!--begin::Content-->
+        <!--로그인폼-->
+        <div class="login-content flex-lg-row-fluid d-flex flex-column overflow-hidden py-10 py-lg-20 px-10 p-lg-7 mx-auto mw-450px w-100">
+            <!--begin::Wrapper-->
+            <!--begin::Signin Form-->
+            <!-- 비밀번호 찾기 팝업 -->
+            <div class="modal fade" id="result_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-left: 220px;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title text-center">비밀번호 찾기 성공</h1>
+                        </div>
+                        <div class="modal-body">
+                            <p id="result_message" style="font-size: larger;">임시 비밀번호가 이메일로 발송되었습니다. 확인해주세요.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 비밀번호 찾기 실패 팝업 -->
+            <div class="modal fade" id="error_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-left: 220px;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title text-center">비밀번호 찾기 실패</h1>
+                        </div>
+                        <div class="modal-body">
+                            <p id="error_message" style="font-size: larger;">입력하신 정보 확인 부탁드립니다.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form w-100 needs-validation" novalidate id="kt_login_signin_form" action="/loginjoin/Pwfind" method="post">
+                <div class="pb-5 pb-lg-1">
+                    <h3 class="fw-bolder text-dark display-6">비밀번호 찾기</h3>
+                    <p class="text-muted fw-bold fs-3">가입하신 이메일을 통해 찾을 수 있습니다.</p>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bolder text-dark pt-5">아이디</label>
+                    <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="id" required autocomplete="off" style="border-color: #0099FF;" maxLength="20" />
+                    <div class="invalid-feedback">
+                        아이디를 입력해주세요.
+                    </div>
+                    <div class="invalid-feedback" style="display: none;">
+                        대소문자 영어, 숫자만 입력 가능합니다.
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bolder text-dark pt-5">이름</label>
+                    <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="name" required autocomplete="off" style="border-color: #0099FF;" maxLength="20" />
+                    <div class="invalid-feedback">
+                        이름을 입력해주세요.
+                    </div>
+                    <div class="invalid-feedback" style="display: none;">
+                        이름은 한글만 입력할 수 있습니다.
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bolder text-dark pt-5">이메일</label>
+                    <input class="form-control form-control-lg form-control-solid" type="email" placeholder="you@example.com" name="email" required autocomplete="off" style="border-color: #0099FF;" maxLength="30" />
+                    <div class="invalid-feedback">
+                        이메일을 입력해주세요.
+                    </div>
+                    <div class="invalid-feedback" style="display: none;">
+                        이메일 형식으로 입력해주세요.
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center pb-lg-0 pb-5">
+                    <button type="submit" class="btn btn-primary fw-bolder fs-6 px-8 py-4 my-3 me-4">비밀번호 찾기</button>
+                    <button type="button" class="btn btn-light-primary fw-bolder fs-6 px-8 py-4 my-4" th:onclick="|location.href='@{/loginjoin/common/login}'|">취소</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/js/loginJoin/Pw.js}"></script>
+</body>
+</html>

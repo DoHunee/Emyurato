@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+td {
+    width: 50px;
+    height: 50px;
+}
+
+
+.center {
+    background-color:rgb(217,217,217);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Calendar {
+    text-align: center;
+    background-color: rgb(255,255,255);
+}
+
+.Calendar>thead>tr:first-child>td {
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.Calendar>thead>tr:last-child>td {
+    font-family: 'Questrial', sans-serif;
+    font-weight: 600;
+}
+
+.Calendar>tbody>tr>td>p {
+    font-family: 'Montserrat', sans-serif;
+    height: 45px;
+    width: 45px;
+    border-radius: 45px;
+    transition-duration: .2s;
+    line-height: 45px;
+    margin: 2.5px;
+    display: block;
+    text-align: center;
+}
+
+.pastDay {
+    color: lightgray;
+}
+
+.today {
+    background-color: #F5D042;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.futureDay {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+.futureDay:hover{
+    background:#eee;
+}
+
+.futureDay.choiceDay,
+.today.choiceDay {
+    background: #0A174E;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+}
+
+.clicked {
+    background-color: #b6c1de;
+    color: white;
+}
+
+/*datepicer 버튼 롤오버 시 손가락 모양 표시*/
+.ui-datepicker-trigger{cursor: pointer;}
+/*datepicer input 롤오버 시 손가락 모양 표시*/
+.hasDatepicker{cursor: pointer;}
+
+#star {
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 버튼 1과 버튼 2의 공통 속성 */
+.plus, .minus {
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 73px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* 버튼 1 */
+.plus {
+    background-color: #062d92;
+    color: #ffffff;
+    border: none;
+}
+
+.plus:hover {
+    background-color: #c4cee9;
+}
+
+/* 버튼 2 */
+.minus {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #062d92;
+}
+
+.minus:hover {
+    background-color: #062d92;
+    color: #ffffff;
+    border: 2px solid #062d92;
+}

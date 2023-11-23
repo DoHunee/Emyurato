@@ -1,0 +1,214 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-side {
+    width: 70%;
+    height: 100vh;
+    background: #888;
+}
+
+.sideMenu {
+    position: relative;
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 18px;
+}
+.Shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0%;
+    z-index: 20;
+    height: 995px;
+}
+.Shadow .bar {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    background: url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/shadow/map_shadow.png) repeat-y;
+}
+
+
+.nav_top {
+    background: #c4cee9;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_top > div {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_hd {
+    justify-content: space-between;
+    padding: 0% 5%;
+}
+
+.nav_srBox {
+    justify-content: center;
+    padding: 0% 5%;
+}
+
+.nav_srBox > input {
+    padding: 15px;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid #062d92;
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.categoryWrap {
+    justify-content: center;
+    gap: 25px;
+}
+#loginBtn {
+    background-color: #3662cf;
+    color: #fff;
+}
+#loginBtn:hover {
+    background-color: #062d92;
+    color: #fff;
+}
+
+.categoryWrap > a {
+    display: block;
+    width: 18%;
+    padding: 2% 2%;
+    background: #3662cf;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.categoryWrap > a:hover {
+    background: #062d92;
+    transform: scale(1.15);
+}
+
+.nav_bt {
+    width: 100%;
+    height: 80%;
+    background: #ffffff;
+}
+
+.nav_toggleBtn {
+    display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    .sideMenu {
+        width: 0%;
+        transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        position: absolute;
+        z-index: 1000;
+        background-color: #fff;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .left-side {
+        width: 100%;
+        transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .nav_toggleBtn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .sideMenu.active {
+        width: 70%;
+    }
+
+    .left-side.active {
+        width: 30%;
+    }
+}
+
+.nav_bt {
+    padding: 20px;
+}
+
+/*fonts.css*/
+@font-face {
+    font-family: 'NanumGothicLight'; /*font 이름*/
+    font-style: normal; /* font 스타일 정의 (기울임, 일반) */
+    font-weight: 400; /* font 굵기 정의 */
+    /* 브라우저&디바이스 환경에 따른 font 파일 위치 정의 */
+./assets/NanumGothicLight.ttf
+src: url('/assets/NanumGothicLight.ttf'); /* IE9 Compat Modes */
+}
+
+/* 폰트 적용 */
+.body {
+    font-family: 'font-name';
+}
+
+li h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+li p {
+    font-size: 13px;
+    transition: color 0.3s ease-in-out;
+}
+li strong {
+    font-weight: bold;
+}
+li:hover h3,
+li:hover p {
+    color: #062d91;
+}
+.image-wrapper img {
+    width: 100px;
+    height: 100px;
+}
+
+.categoryWrap a:hover {
+    cursor: pointer;
+}
+
+.conInfo {
+    height: 637px; /* 스크롤바가 나타날 최대 높이 */
+    overflow-y: scroll; /* 세로 스크롤바를 보이게 한다. */
+}
